@@ -7,8 +7,8 @@
 alias cdd='cd ../'
 alias cddd='cd ../../'
 alias cdddd='cd ../../../'
-alias cdddd='cd ../../../../'
-alias cddddd='cd ../../../../../'
+alias cddddd='cd ../../../../'
+alias cdddddd='cd ../../../../../'
 
 # Asigning aliases for ls command
 alias ls='ls --color=auto'

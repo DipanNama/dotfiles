@@ -1,0 +1,33 @@
+<!doctype html><html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A searchable reference for Dipan Nama's Bash aliases. Inspect commands without executing them."><title>Dotfiles - Alias Atlas</title><link rel="stylesheet" href="style.css"></head><body><main><header><div class="brand">Dotfiles <span>by Dipan Nama</span></div><button id="theme" aria-label="Switch color theme"><span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-moon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg>
+</span></button></header><section class="intro"><span class="pill">Small shortcuts, clearly mapped</span><h1>A little less typing.</h1><p>The Bash aliases from my Termux dotfiles, in one searchable place.</p></section><section class="layout"><div class="frame"><div class="inner"><h2>Find a shortcut.</h2><label for="query">Search name or command</label><input id="query" maxlength="100" placeholder="Try cd or grep"><div class="categories" role="group" aria-label="Category"><button data-category="All" aria-pressed="true">All</button><button data-category="Navigation" aria-pressed="false">Navigation</button><button data-category="Files" aria-pressed="false">Files</button><button data-category="Search" aria-pressed="false">Search</button><button data-category="Terminal" aria-pressed="false">Terminal</button></div><button id="export" class="primary">Export shown aliases <span class="tile"><!-- @license lucide-static v1.54.0 - ISC -->
+<svg class="icon"
+  class="lucide lucide-download"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" />
+</svg>
+</span></button><p class="hint">A reference, not a terminal. Nothing here executes commands or installs the dotfiles.</p><p class="hint">Aliases require Bash configuration. Commands depend on your installed tools and options. top maps to htop; vi maps to vim.</p><div id="notice" class="notice" role="status" aria-live="polite"></div></div></div><div><div class="result-head"><h2>Alias directory</h2><span class="badge" id="count">Loading aliases</span></div><div id="records" class="alias-list"></div></div></section><section class="notes"><div><strong>Navigation, repaired</strong><p>The original cdddd appeared twice. Levels one through five now have unique names, so no shortcut silently masks another.</p></div><div><strong>Inspect before installing</strong><p>The old installer copies files with force and installs packages. Its Android paths and permissions have not been device-tested.</p></div><div><strong>Local reference</strong><p>Search and filters stay in this tab. Copy an alias name or its expanded command. Only the color theme is saved.</p></div></section><div class="divider"></div><footer><span>Built by Dipan Nama. Reference only.</span><a href="https://github.com/DipanNama/dotfiles" target="_blank" rel="noopener noreferrer">Source & configurations</a></footer></main><script src="filter.js"></script><script src="app.js"></script></body></html>
