@@ -1,0 +1,13 @@
+const t=require('node:test'),a=require('assert/strict'),f=require('fs'),{execFileSync}=require('child_process'),items=require('./site/aliases.json'),filter=require('./site/filter').filter;
+t('fixture exact source parity',()=>{const parsed=[...f.readFileSync('.scripts/aliases','utf8').matchAll(/^alias ([A-Za-z0-9_]+)='([^']+)'/gm)].map(x=>({name:x[1],command:x[2]}));a.deepEqual(items.map(({name,command})=>({name,command})),parsed);});
+t('unique names',()=>a.equal(new Set(items.map(x=>x.name)).size,items.length));
+t('Bash actual registration',()=>{const output=execFileSync('bash',['--noprofile','--norc','-c','source .scripts/aliases; alias'],{encoding:'utf8'});for(const x of items)a.ok(output.includes(`alias ${x.name}='${x.command}'`));});
+t('five navigation levels',()=>{for(let i=1;i<=5;i++)a.equal(items.find(x=>x.name==='c'+'d'.repeat(i+1)).command,'cd '+'../'.repeat(i));});
+t('search command/name',()=>{a.equal(filter(items,'GREP','All').length,3);a.equal(filter(items,'vim','All')[0].name,'vi');});
+t('category filters',()=>a.equal(filter(items,'','Navigation').length,5));
+t('empty result',()=>a.equal(filter(items,'missing','All').length,0));
+t('blank search',()=>a.equal(filter(items,'  ','All').length,items.length));
+t('limits',()=>a.throws(()=>filter(items,'x'.repeat(101),'All')));
+t('no mutation',()=>{const before=JSON.stringify(items);filter(items,'cd','All');a.equal(JSON.stringify(items),before);});
+t('syntax only installers',()=>{for(const p of ['install.sh','setup.sh','.scripts/aliases'])execFileSync('bash',['-n',p]);});
+t('main only',()=>{const s=f.readFileSync('.github/workflows/pages.yml','utf8');a.ok(s.includes('branches: [main]'));a.ok(!s.includes('workflow_dispatch'));});
