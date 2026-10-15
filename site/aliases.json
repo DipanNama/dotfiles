@@ -1,0 +1,77 @@
+[
+  {
+    "name": "cdd",
+    "command": "cd ../",
+    "category": "Navigation"
+  },
+  {
+    "name": "cddd",
+    "command": "cd ../../",
+    "category": "Navigation"
+  },
+  {
+    "name": "cdddd",
+    "command": "cd ../../../",
+    "category": "Navigation"
+  },
+  {
+    "name": "cddddd",
+    "command": "cd ../../../../",
+    "category": "Navigation"
+  },
+  {
+    "name": "cdddddd",
+    "command": "cd ../../../../../",
+    "category": "Navigation"
+  },
+  {
+    "name": "ls",
+    "command": "ls --color=auto",
+    "category": "Files"
+  },
+  {
+    "name": "ll",
+    "command": "ls -lah",
+    "category": "Files"
+  },
+  {
+    "name": "la",
+    "command": "ls -a",
+    "category": "Files"
+  },
+  {
+    "name": "c",
+    "command": "clear",
+    "category": "Terminal"
+  },
+  {
+    "name": "grep",
+    "command": "grep --color=auto",
+    "category": "Search"
+  },
+  {
+    "name": "fgrep",
+    "command": "fgrep --color=auto",
+    "category": "Search"
+  },
+  {
+    "name": "egrep",
+    "command": "egrep --color=auto",
+    "category": "Search"
+  },
+  {
+    "name": "vi",
+    "command": "vim",
+    "category": "Terminal"
+  },
+  {
+    "name": "top",
+    "command": "htop",
+    "category": "Terminal"
+  },
+  {
+    "name": "diff",
+    "command": "diff --color=auto",
+    "category": "Files"
+  }
+]
